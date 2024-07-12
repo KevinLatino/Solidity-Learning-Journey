@@ -1,6 +1,6 @@
-pragma solidity >=0.5.0 <0.6.0;
 // Define the version of Solidity to be used for compiling this contract
 // Any version from 0.5.0 up to, but not including, 0.6.0
+pragma solidity >=0.5.0 <0.6.0;
 
 contract ZombieFactory {
     // Define the number of digits the DNA of each zombie will have
@@ -20,4 +20,16 @@ contract ZombieFactory {
     // Declare a dynamic public array of Zombies
     // This will store all instances of Zombies created
     Zombie[] public zombies;
+
+    //Declare a private function
+    //where we can push to zombies dynamic array a new Zombie
+    function _createZombie(string memory _name, uint _dna) private {
+        zombies.push(Zombie(_name, _dna));
+    }
+
+    //Declare a private funtion 
+    //it will create a randon DNA in the future, it will return just a view in uint format
+    function _generateRandomDna(string memory _str) private view returns (uint) {
+        // start here
+    }  
 }
