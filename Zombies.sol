@@ -1,7 +1,7 @@
 pragma solidity >=0.5.0 <0.6.0;
-
 // Define the version of Solidity to be used for compiling this contract
 // Any version from 0.5.0 up to, but not including, 0.6.0
+
 contract ZombieFactory {
     // Define the number of digits the DNA of each zombie will have
     uint dnaDigits = 16;
