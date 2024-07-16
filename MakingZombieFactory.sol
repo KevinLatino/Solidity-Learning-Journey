@@ -27,9 +27,14 @@ contract ZombieFactory {
         zombies.push(Zombie(_name, _dna));
     }
 
-    //Declare a private funtion 
-    //it will create a randon DNA in the future, it will return just a view in uint format
     function _generateRandomDna(string memory _str) private view returns (uint) {
-        // start here
-    }  
+        uint rand = uint(keccak256(abi.encodePacked(_str)));
+        return rand % dnaModulus;
+    }
+
+    function createRandomZombie(string memory _name) public {
+        uint randDna = _generateRandomDna(_name);
+        _createZombie(_name, randDna);
+    }
+
 }
