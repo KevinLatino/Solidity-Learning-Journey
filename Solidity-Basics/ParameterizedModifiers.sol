@@ -8,7 +8,7 @@ contract C2M2 {
     string[] names;
 
     constructor() {
-        owner = msg.;
+        owner = msg.sender;
     }
 
     modifier OnlyOwner() {
